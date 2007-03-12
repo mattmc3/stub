@@ -1,0 +1,17 @@
+<%@ import System -%>
+<%
+	def GetSomeAsciiChars(minCharNum as int, maxCharNum as int) as string:
+		chars = []
+		for i as int in range(minCharNum, maxCharNum + 1):
+			chars.Add(Convert.ToChar(i).ToString())
+		end
+		return join(chars, '')
+	end
+	
+	# overload!
+	def GetSomeAsciiChars() as string:
+		return 'abc'
+	end
+-%>
+Here are some chars: '<%= GetSomeAsciiChars() %>'
+Here are some more: <%= GetSomeAsciiChars(33, 126) %>

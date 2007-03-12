@@ -1,0 +1,37 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{ED49FCD1-9B8B-4624-8AC0-A5CC1FE7B557}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>stub</RootNamespace>
+    <AssemblyName>stub</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Boo.Lang.Useful" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.boo" />
+    <Compile Include="ClassExtensions.boo" />
+    <Compile Include="CmdArg.boo" />
+    <Compile Include="CmdArgProcessor.boo" />
+    <Compile Include="Program.boo" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\stub.engine\stub.engine.booproj">
+      <Project>{3A7D52E7-3738-4A23-BB6B-F10E69F47501}</Project>
+      <Name>stub.engine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(BooBinPath)\Boo.Microsoft.Build.targets" />
+</Project>

@@ -1,0 +1,3 @@
+<% numMessages = 7 -%>
+You have <%= numMessages %> new messages!
+You have <%= numMessages -%> new messages!

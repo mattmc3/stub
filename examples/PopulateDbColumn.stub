@@ -1,0 +1,74 @@
+<%#
+In SQL Server, it is often difficult to add a new non-nullable column to a table.
+If the table is big, the update to set the defaults on the column takes forever.
+Then, once the data has no NULLs, if you are not experienced and try to use
+Enterprise Manager to change the field to disallow NULLs, then you will be in for
+a big surprise as SQL Server takes the long way around instead of just doing a
+simple ALTER TABLE.  This stub makes a nice alternative for that scenario.
+-%>
+<%-
+CHUNK_SIZE = 1_000_000
+NAME     = 0
+DATATYPE = 1
+VALUE    = 2
+
+### CHANGE ME! ###
+database = "Northwind"
+tableName = "Employees"
+idColumn = "EmployeeID" # MUST BE SINGLE COLUMN PRIMARY KEY!
+newColumns as duck = [
+	("MobileNumber",         "NVARCHAR(24)", "''"),
+	("PagerNumber",          "NVARCHAR(24)", "''"),
+	("FederalTaxExemptions", "SMALLINT",     "0"),
+]
+-%>
+<%# Begin generating SQL -%>
+USE <%= database %>
+GO
+
+<% for colDetails as (string) in newColumns: -%>
+ALTER TABLE <%= tableName %> ADD <%= colDetails[NAME] %> <%= colDetails[DATATYPE] %>
+GO
+<% end -%>
+
+SET NOCOUNT ON
+
+DECLARE @count INT
+SET @count = 1
+
+WHILE @count > 0 BEGIN
+	IF OBJECT_ID('tempdb..#tmp') IS NOT NULL DROP TABLE #tmp
+
+	SELECT TOP <%= CHUNK_SIZE %>
+		a.<%= idColumn %> AS ID
+	INTO
+		#tmp
+	FROM
+		<%= tableName %> a
+	WHERE
+		a.<%= newColumns[0][NAME] %> IS NULL
+
+	SET @count = @@ROWCOUNT
+	PRINT @count
+
+	CREATE CLUSTERED INDEX IX_ID ON #tmp (ID)
+
+	UPDATE
+		a
+	SET
+<%
+setStatements = []
+for colDetails as (string) in newColumns:
+	setStatements.Add("{0} = {1}" % (colDetails[NAME], colDetails[VALUE]))
+end
+-%>
+		<% self.Emit(join(setStatements, ",\n\t\t")) %>
+	FROM
+		<%= tableName %> a INNER JOIN
+		#tmp t ON a.<%= idColumn %> = t.ID
+END
+
+<% for colDetails as (string) in newColumns: -%>
+ALTER TABLE <%= tableName %> ALTER COLUMN <%= colDetails[NAME] %> <%= colDetails[DATATYPE] %> NOT NULL
+GO
+<% end -%>

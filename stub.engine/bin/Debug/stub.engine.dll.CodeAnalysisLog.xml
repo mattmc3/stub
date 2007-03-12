@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="http://www.gotdotnet.com/team/fxcop//xsl/1.35/FxCopReport.xsl"?>
+<FxCopReport Version="1.35">
+ <Namespaces>
+  <Namespace Name="Stub">
+   <Messages>
+    <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="Breaking">
+     <Issue Certainty="50" Level="Warning">Consider merging the types defined in 'Stub' with another namespace.</Issue>
+    </Message>
+   </Messages>
+  </Namespace>
+ </Namespaces>
+ <Targets>
+  <Target Name="C:\Documents and Settings\Matt.LIQUID\My Documents\My Projects\Personal\Boo\stub\stub.engine\bin\Debug\stub.engine.dll">
+   <Modules>
+    <Module Name="stub.engine.dll">
+     <Messages>
+      <Message TypeName="AssembliesShouldDeclareMinimumSecurity" Category="Microsoft.Usage" CheckId="CA2209" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="Breaking">
+       <Issue Certainty="95" Level="CriticalError">No valid permission requests were found for assembly 'stub.engine'. You should always specify the minimum security permissions using SecurityAction.RequestMinimum.</Issue>
+      </Message>
+      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="NonBreaking">
+       <Issue Name="NoStrongName" Certainty="95" Level="CriticalError">Sign 'stub.engine' with a strong name key.</Issue>
+      </Message>
+      <Message TypeName="AttributeStringLiteralsShouldParseCorrectly" Category="Microsoft.Usage" CheckId="CA2243" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="NonBreaking">
+       <Issue Certainty="75" Level="Warning">Change the value of argument 'version', which is currently "0.7.1.*", to something that can be correctly parsed as System.Version.</Issue>
+      </Message>
+      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="NonBreaking">
+       <Issue Name="NoAttr" Certainty="95" Level="Error">'stub.engine' should be marked with CLSCompliantAttribute and its value should be true.</Issue>
+      </Message>
+      <Message TypeName="MarkAssembliesWithComVisible" Category="Microsoft.Design" CheckId="CA1017" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="NonBreaking">
+       <Issue Name="NoAttribute" Certainty="95" Level="CriticalError">Mark 'stub.engine' as ComVisible(false) at the assembly level, then mark all types within the assembly that should be exposed to Com clients as ComVisible(true).</Issue>
+      </Message>
+     </Messages>
+     <Namespaces>
+      <Namespace Name="Stub">
+       <Types>
+        <Type Name="BooTemplateEngine" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name=".cctor()" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="StaticConstructorsShouldBePrivate" Category="Microsoft.Security" CheckId="CA2121" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error">Declare an explicit static constructor for 'Stub.BooTemplateEngine'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name=".ctor(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning">'BooTemplateEngine.BooTemplateEngine(String)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;BooTemplateEngine.BooTemplateEngine(String)&#xD;&#xA;BooTemplateEngine.set_Template(String):Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning">'BooTemplateEngine.BooTemplateEngine(String)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;BooTemplateEngine.BooTemplateEngine(String)&#xD;&#xA;BooTemplateEngine.set_Template(String):Void&#xD;&#xA;BooTemplateEngine.get_Template():String</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="_controlStatements" Kind="Field" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Make '_controlStatements' private or internal (Friend in VB, public private in C++) and provide a public or protected property to access it.</Issue>
+            </Message>
+            <Message Id="Member" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove all underscores from member '_controlStatements'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="_normalizedTemplate" Kind="Field" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Make '_normalizedTemplate' private or internal (Friend in VB, public private in C++) and provide a public or protected property to access it.</Issue>
+            </Message>
+            <Message Id="Member" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove all underscores from member '_normalizedTemplate'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="_outVar" Kind="Field" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Make '_outVar' private or internal (Friend in VB, public private in C++) and provide a public or protected property to access it.</Issue>
+            </Message>
+            <Message Id="Member" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove all underscores from member '_outVar'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="_scriptClassName" Kind="Field" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Make '_scriptClassName' private or internal (Friend in VB, public private in C++) and provide a public or protected property to access it.</Issue>
+            </Message>
+            <Message Id="Member" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove all underscores from member '_scriptClassName'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="_template" Kind="Field" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Make '_template' private or internal (Friend in VB, public private in C++) and provide a public or protected property to access it.</Issue>
+            </Message>
+            <Message Id="Member" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove all underscores from member '_template'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="BuildControlStatement(System.String):System.String" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Documents and Settings\Matt.LIQUID\My Documents\My Projects\Personal\Boo\stub\stub.engine" File="BooTemplateEngine.boo" Line="259">The 'this' parameter (or 'Me' in VB) of BooTemplateEngine.BuildControlStatement(String):String is never used. Mark the member as static (or Shared in VB) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="BuildExpression(System.String):System.String" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Documents and Settings\Matt.LIQUID\My Documents\My Projects\Personal\Boo\stub\stub.engine" File="BooTemplateEngine.boo" Line="248">BooTemplateEngine.BuildExpression(String):String makes a call to System.String.Format(System.String,System.Object,System.Object,System.Object) that does not explicitly provide an IFormatProvider. This should be replaced with a call to System.String.Format(System.IFormatProvider,System.String,System.Object[]).</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="BuildLiteral(System.String):System.String" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="InstantiateArgumentExceptionsCorrectly" Category="Microsoft.Usage" CheckId="CA2208" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="NonBreaking">
+             <Issue Name="OneArgumentShouldBeParameterName" Certainty="95" Level="CriticalError" Path="C:\Documents and Settings\Matt.LIQUID\My Documents\My Projects\Personal\Boo\stub\stub.engine" File="BooTemplateEngine.boo" Line="268">Calls to System.ArgumentOutOfRangeException's constructor 'ArgumentOutOfRangeException.ArgumentOutOfRangeException(String)' should contain one of the method's parameter names instead of 'max'. Note that the provided parameter name should have the exact casing as declared on the method.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Documents and Settings\Matt.LIQUID\My Documents\My Projects\Personal\Boo\stub\stub.engine" File="BooTemplateEngine.boo" Line="272">BooTemplateEngine.BuildLiteral(String):String makes a call to System.String.Format(System.String,System.Object,System.Object,System.Object) that does not explicitly provide an IFormatProvider. This should be replaced with a call to System.String.Format(System.IFormatProvider,System.String,System.Object[]).</Issue>
+            </Message>
+            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="NonBreaking">
+             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="C:\Documents and Settings\Matt.LIQUID\My Documents\My Projects\Personal\Boo\stub\stub.engine" File="BooTemplateEngine.boo" Line="263">Replace the call to String.op_Equality(String.Empty) in 'BooTemplateEngine.BuildLiteral(String):String' with a call to String.IsNullOrEmpty.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="CreateBooPropertySnippet(System.String):System.String" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Documents and Settings\Matt.LIQUID\My Documents\My Projects\Personal\Boo\stub\stub.engine" File="BooTemplateEngine.boo" Line="357">The 'this' parameter (or 'Me' in VB) of BooTemplateEngine.CreateBooPropertySnippet(String):String is never used. Mark the member as static (or Shared in VB) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="GetBooClass(System.String,System.Collections.IDictionary):System.String" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="key" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning">BooTemplateEngine.GetBooClass(String, IDictionary):String declares a local, 'key', of type System.Object, which is never used or is only assigned to. Use this local or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="UnescapeTags(System.String):System.String" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Documents and Settings\Matt.LIQUID\My Documents\My Projects\Personal\Boo\stub\stub.engine" File="BooTemplateEngine.boo" Line="279">The 'this' parameter (or 'Me' in VB) of BooTemplateEngine.UnescapeTags(String):String is never used. Mark the member as static (or Shared in VB) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BooTemplateEngine+GetBooClass___generator1+Enumerator" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name=".ctor(CompilerGenerated.___locals6,Stub.BooTemplateEngine)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning">'Enumerator.Enumerator(___locals6, BooTemplateEngine)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;Enumerator.Enumerator(___locals6, BooTemplateEngine)&#xD;&#xA;Enumerator.Reset():Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ClassExtensionsModule" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="Codify(System.String):System.String" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0#s" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="Breaking">
+             <Issue Name="ParameterOneLetter" Certainty="75" Level="CriticalWarning" Path="C:\Documents and Settings\Matt.LIQUID\My Documents\My Projects\Personal\Boo\stub\stub.engine" File="ClassExtensions.boo" Line="39">In method ClassExtensionsModule.Codify(String):String, consider providing a more meaningful name than the one-letter parameter name 's'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ITemplateEngine" Kind="Interface" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="AvoidOverloadsInComVisibleInterfaces" Category="Microsoft.Interoperability" CheckId="CA1402" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="Breaking">
+           <Issue Certainty="90" Level="CriticalWarning">ComVisible(true) interface 'Stub.ITemplateEngine' defines overloaded methods. Give each method a unique name or make the type ComVisible(false).</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="TemplateSyntaxException" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032" Status="Active" Created="2007-04-01 21:27:09Z" FixCategory="NonBreaking">
+           <Issue Certainty="95" Level="Error">Add the following constructor to Stub.TemplateSyntaxException: protected TemplateSyntaxException(SerializationInfo, StreamingContext).</Issue>
+           <Issue Certainty="95" Level="Error">Add the following constructor to Stub.TemplateSyntaxException: public TemplateSyntaxException().</Issue>
+           <Issue Certainty="95" Level="Error">Add the following constructor to Stub.TemplateSyntaxException: public TemplateSyntaxException(String, Exception).</Issue>
+          </Message>
+         </Messages>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="AssembliesShouldDeclareMinimumSecurity" Category="Microsoft.Usage" CheckId="CA2209">
+   <Name>Assemblies should declare minimum security</Name>
+   <Description>Permission requests prevent security exceptions from being thrown after code in an assembly has already begun executing. If permission requests are specified on an assembly, the assembly will not load at runtime if it has insufficient permissions. To resolve violations of this rule, add attributes that specify what permissions the assembly will demand or might demand, and what permissions it does not want granted.  To specify required permissions, use SecurityAction.Minimum. To specify permissions that the assembly might demand, use SecurityAction.RequestOptional. To specify permissions that the assembly must not be granted, use SecurityAction.RequestRefuse.</Description>
+   <Resolution Name="Default">No valid permission requests were found for assembly '{0}'. You should always specify the minimum security permissions using SecurityAction.RequestMinimum.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Usage/AssembliesShouldDeclareMinimumSecurity.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="UsageRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210">
+   <Name>Assemblies should have valid strong names</Name>
+   <Description>Either the assembly has no strong name, an invalid one, or the strong name is valid only because of the computer configuration. The assembly should not be deployed in this state. The most common causes of this are: 1) The assembly's contents were modified after it was signed. 2) The signing process failed. 3) The assembly was delay-signed. 4) A registry key existed that allowed the check to pass (where it would not have otherwise).</Description>
+   <Resolution Name="NoStrongName">Sign '{0}' with a strong name key.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Design/AssembliesShouldHaveValidStrongNames.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="DesignRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="AttributeStringLiteralsShouldParseCorrectly" Category="Microsoft.Usage" CheckId="CA2243">
+   <Name>Attribute string literals should parse correctly</Name>
+   <Description>Literal strings used as attribute parameters that represent URLs, version numbers, or GUIDs, should have the appropriate format.</Description>
+   <Resolution Name="Default">Change the value of argument '{0}', which is currently "{1}", to something that can be correctly parsed as {2}.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Usage/AttributeStringLiteralsShouldParseCorrectly.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="UsageRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020">
+   <Name>Avoid namespaces with few types</Name>
+   <Description>A namespace should generally have more than five types.</Description>
+   <Resolution Name="Default">Consider merging the types defined in '{0}' with another namespace.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Design/AvoidNamespacesWithFewTypes.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="50">Warning</MessageLevel>
+   <File Name="DesignRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidOverloadsInComVisibleInterfaces" Category="Microsoft.Interoperability" CheckId="CA1402">
+   <Name>Avoid overloads in ComVisible interfaces</Name>
+   <Description>Interfaces that are visible to COM should not define overloads, as they will be renamed and cannot be implemented by VB6 clients. COM interfaces cannot contain overloaded methods.</Description>
+   <Resolution Name="Default">ComVisible(true) interface '{0}' defines overloaded methods. Give each method a unique name or make the type ComVisible(false).</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Interoperability/AvoidOverloadsInComVisibleInterfaces.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">CriticalWarning</MessageLevel>
+   <File Name="InteroperabilityRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214">
+   <Name>Do not call overridable methods in constructors</Name>
+   <Description>Virtual methods defined on the class should not be called from constructors. If a derived class has overridden the method, the derived class version will be called (before the derived class constructor is called).</Description>
+   <Resolution Name="Default">'{0}' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: {1}</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Usage/DoNotCallOverridableMethodsInConstructors.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalWarning</MessageLevel>
+   <File Name="UsageRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051">
+   <Name>Do not declare visible instance fields</Name>
+   <Description>Public or protected instance fields limit your ability to change the implementation details for those data items. Use properties instead. They do not compromise usability or performance and they do provide flexibility in that they conceal the  implementation details of the underlying data.</Description>
+   <Resolution Name="Default">Make '{0}' private or internal (Friend in VB, public private in C++) and provide a public or protected property to access it.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Design/DoNotDeclareVisibleInstanceFields.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error</MessageLevel>
+   <File Name="DesignRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+   <Name>Identifiers should be spelled correctly</Name>
+   <Description>The individual words that make up an identifier should not be abbreviated and should be spelled correctly. If this rule generates a false positive on a term that should be recognized, add the word to the FxCop custom dictionary.</Description>
+   <Resolution Name="ParameterOneLetter">In method {0}, consider providing a more meaningful name than the one-letter parameter name '{1}'.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Naming/IdentifiersShouldBeSpelledCorrectly.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">CriticalWarning</MessageLevel>
+   <File Name="NamingRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707">
+   <Name>Identifiers should not contain underscores</Name>
+   <Description>Do not use underscores when specifying identifiers. Some generated Visual Studio identifiers for applications contain underscore characters. Underscore characters should generally be avoided in public identifiers.</Description>
+   <Resolution Name="Member">Remove all underscores from member '{0}'.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Naming/IdentifiersShouldNotContainUnderscores.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="NamingRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032">
+   <Name>Implement standard exception constructors</Name>
+   <Description>Multiple constructors are required to correctly implement a custom exception. Missing constructors can make your exception unusable in certain scenarios. For example, the serialization constructor is required for handling exceptions in XML Web services.</Description>
+   <Resolution Name="Default">Add the following constructor to {0}: {1}.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Design/ImplementStandardExceptionConstructors.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="DesignRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="InstantiateArgumentExceptionsCorrectly" Category="Microsoft.Usage" CheckId="CA2208">
+   <Name>Instantiate argument exceptions correctly</Name>
+   <Description>String arguments passed to constructors of ArgumentException and its derived types should be correct. Types derived from ArgumentException have inconsistent constructor overloads with respect to the message and paramName parameters as compared to ArgumentException.</Description>
+   <Resolution Name="OneArgumentShouldBeParameterName">Calls to {0}'s constructor '{1}' should contain one of the method's parameter names instead of '{2}'. Note that the provided parameter name should have the exact casing as declared on the method.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Usage/InstantiateArgumentExceptionsCorrectly.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="UsageRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014">
+   <Name>Mark assemblies with CLSCompliant</Name>
+   <Description>Assemblies should explicitly state their Cls compliance using the CLSCompliant attribute. An assembly without this attribute is not CLS-compliant. Assemblies, modules, and types can be CLS-compliant even if some parts of the assembly, module, or type are not CLS-compliant. The following rules apply: 1) If the element is marked CLSCompliant, any noncompliant members must have the CLSCompliant attribute present with its argument set to false. 2) A comparable CLS-compliant alternative member must be supplied for each member that is not CLS-compliant.</Description>
+   <Resolution Name="NoAttr">'{0}' should be marked with CLSCompliantAttribute and its value should be true.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Design/MarkAssembliesWithClsCompliant.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="DesignRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithComVisible" Category="Microsoft.Design" CheckId="CA1017">
+   <Name>Mark assemblies with ComVisible</Name>
+   <Description>The System.Runtime.InteropServices.ComVisible attribute indicates whether COM clients can use the library. Good design dictates that developers explicitly indicate COM visibility. The default value for this attribute is 'true'. However, the best design is to mark the assembly ComVisible false, and then mark types, interfaces, and individual members as ComVisible true, as appropriate.</Description>
+   <Resolution Name="NoAttribute">Mark '{0}' as ComVisible(false) at the assembly level, then mark all types within the assembly that should be exposed to Com clients as ComVisible(true).</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Design/MarkAssembliesWithComVisible.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError, Error</MessageLevel>
+   <File Name="DesignRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
+   <Name>Mark members as static</Name>
+   <Description>Methods which do not access instance data or call instance methods can be marked as static (Shared in VB). After doing so, the compiler will emit non-virtual call sites to these members which will prevent a check at runtime for each call that insures the current object pointer is non-null. This can result in a measurable performance gain for performance-sensitive code. In some cases, the failure to access the current object instance represents a correctness issue.</Description>
+   <Resolution Name="Default">The 'this' parameter (or 'Me' in VB) of {0} is never used. Mark the member as static (or Shared in VB) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Performance/MarkMembersAsStatic.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="PerformanceRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804">
+   <Name>Remove unused locals</Name>
+   <Description>Remove locals that are not used or are only assigned to in method implementations.</Description>
+   <Resolution Name="Default">{0} declares a local, '{1}', of type {2}, which is never used or is only assigned to. Use this local or remove it.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Performance/RemoveUnusedLocals.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="PerformanceRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">
+   <Name>Specify IFormatProvider</Name>
+   <Description>If an overload exists that takes an IFormatProvider argument, it should always be called in favor of an overload that does not. Some methods in the common language runtime convert a value to or from a string representation and take a string parameter that contains one or more characters, called format specifiers, which indicate how the value is to be converted. If the meaning of the format specifier varies by culture, a formatting object supplies the actual characters used in the string representation. In scenarios where sorting and comparison behavior should never change between cultures, specify CultureInfo.InvariantCulture.</Description>
+   <Resolution Name="Default">{0} makes a call to {1} that does not explicitly provide an IFormatProvider. This should be replaced with a call to {2}.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Globalization/SpecifyIFormatProvider.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="GlobalizationRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="StaticConstructorsShouldBePrivate" Category="Microsoft.Security" CheckId="CA2121">
+   <Name>Static constructors should be private</Name>
+   <Description>Non-private static constructors can cause unexpected behaviors, particularly when executed multiple times. This violation can occur if a type declares static data but has not explicitly  declared a static constructor. In this case, some compilers will generate an externally visible static constructor.</Description>
+   <Resolution Name="Default">Declare an explicit static constructor for '{0}'.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Security/StaticConstructorsShouldBePrivate.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="SecurityRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820">
+   <Name>Test for empty strings using string length</Name>
+   <Description>To test for empty strings, check if String.Length is equal to zero. Constructs such as "".Equals(someString) and String.Empty.Equals(someString) are less efficient than testing the string length. Replace these with checks for someString.Length == 0.</Description>
+   <Resolution Name="IsNullOrEmpty">Replace the call to String.{0}({1}) in '{2}' with a call to String.IsNullOrEmpty.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Performance/TestForEmptyStringsUsingStringLength.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="PerformanceRules.dll" Version="1.35.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="Line">Line</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

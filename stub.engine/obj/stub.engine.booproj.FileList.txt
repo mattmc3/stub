@@ -1,0 +1,9 @@
+bin\Debug\stub.engine.dll
+bin\Debug\stub.engine.pdb
+bin\Debug\Boo.Lang.Useful.dll
+bin\Debug\Boo.Lang.dll
+bin\Debug\Boo.Lang.Compiler.dll
+bin\Debug\Boo.Lang.Parser.dll
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\stub.engine.dll
+obj\Debug\stub.engine.pdb

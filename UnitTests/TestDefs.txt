@@ -1,0 +1,2 @@
+Here are some chars: 'abc'
+Here are some more: !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~

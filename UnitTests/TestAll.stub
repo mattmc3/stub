@@ -1,0 +1,49 @@
+Text
+<%# This is a comment %>
+<%#
+*****	The goal here is to test all sorts of things to see if the output is what
+*****	we suspect it will be and if all syntax is supported.
+*****	(TestAll.stub version 1.0)
+-%>
+% self.EmitLine('This is a one-liner')
+%self.EmitLine ('This is another one-liner')
+	% This isn't a one-liner because the % doesn't lead the line
+  % Same here
+%% This also looks like a one-liner but it's escaped
+	%% This doesn't look like a one-liner, so it's not escaped - it's just double percents
+<%
+	def TheMethod() as string:
+		return 'the method was called!'
+	end
+
+	self.EmitLine(TheMethod())
+%>
+<%self.EmitLine('some tight code')%>
+0text0
+	<%
+		self.EmitLine('indented regular code')
+	%>
+1text1
+	<%-
+		self.EmitLine('trim leading space')
+	%>
+2text2
+	<%
+		self.EmitLine("trim trailing space")
+	-%>
+3text3
+	<%-
+		self.EmitLine('trim all space')
+	-%>
+4text4
+
+<%
+	self.EmitLine("you can't use <%% tags %%> in code blocks without accidentally closing your block.")
+	self.EmitLine("so, use escaped <%%% tags %%%> instead.")
+	self.EmitLine("here are a bunch of example tags <%%- -%%> <%%# %%> <%% %%> <%%= -%%>")
+%>
+begin <%- self.EmitLine('This has code block uses trims, but they are voided') -%> end
+% var = 2
+Display "something" in a 'variable' : <%= var * 1000 %>!
+<%= 'test' + '<%% tags %%>' -%>
+the <%% Pretend tags in literals are all the rage %%> end

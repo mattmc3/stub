@@ -1,0 +1,32 @@
+Text
+
+This is a one-liner
+This is another one-liner
+	% This isn't a one-liner because the % doesn't lead the line
+  % Same here
+% This also looks like a one-liner but it's escaped
+	%% This doesn't look like a one-liner, so it's not escaped - it's just double percents
+the method was called!
+
+some tight code
+
+0text0
+	indented regular code
+
+1text1
+trim leading space
+
+2text2
+	trim trailing space
+3text3
+trim all space
+4text4
+
+you can't use <% tags %> in code blocks without accidentally closing your block.
+so, use escaped <%% tags %%> instead.
+here are a bunch of example tags <%- -%> <%# %> <% %> <%= -%>
+
+begin This has code block uses trims, but they are voided
+ end
+Display "something" in a 'variable' : 2000!
+test<% tags %>the <% Pretend tags in literals are all the rage %> end
